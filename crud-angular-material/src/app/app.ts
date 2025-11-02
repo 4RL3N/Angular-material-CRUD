@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
-  selector: 'app-root, form-field-overview-example',
-  imports: [RouterOutlet, MatButtonModule],
+  selector: 'app-root',
+  imports: [RouterOutlet, MatToolbarModule, MatIconModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
