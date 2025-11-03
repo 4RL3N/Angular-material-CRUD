@@ -1,7 +1,11 @@
-<mat-toolbar color="secondary">
-    <span>My App</span>
-    <span class="spacer"></span>
-    <a>Formulario</a>
-    <a>Consulta</a>
+<mat-toolbar color="primary">
+  <span>Minha barra principal</span>
+  <span class="spacer"></span>
+  <a routerLink="/cadastro">
+      <mat-icon fontIcon="feed"></mat-icon>
+  </a>
+  <a routerLink="/consulta">
+    <mat-icon fontIcon="search"></mat-icon>
+  </a>
 </mat-toolbar>
 <router-outlet></router-outlet>
