@@ -1,6 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="center">
     <div fxLayout="column" fxFlex="1000px">
-        <form class="mt-60" #clientesFrm="ngForm">
+        <form class="mt-60" #clientesFrm="ngForm" (ngSubmit)="salvar()">
             <mat-card>
                 <mat-card-header>
                     <mat-card-title>Cadastro de dados de Clientes</mat-card-title>
@@ -9,38 +9,51 @@
                     <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
                         <mat-form-field class="full-width">
                             <mat-label>Nome: *</mat-label>
-                            <input type="text" placeholder="Exemplo: João Ferreira" matInput/>
+                            <input type="text" [(ngModel)]="cliente.nome" name="nome" placeholder="Exemplo: João Ferreira" matInput/>
                         </mat-form-field>
                     </div>
 
                     <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
                         <mat-form-field class="middle-width" appearance="fill">
-                            <mat-label> CPF: *</mat-label>
-                            <input type="number" placeholder="Exemplo: 000.000.000-00" matInput/>
+                            <mat-label> Endereço: *</mat-label>
+                            <input type="text" [(ngModel)]="cliente.endereco" name="endereco" placeholder="Exemplo: Rua das Flores, 123" matInput/>
                         </mat-form-field>
 
                         <mat-form-field class="middle-width" appearance="fill">
                             <mat-label> Email: *</mat-label>
-                            <input type="email" placeholder="Exemplo: exemplo@dominio.com" matInput/>
+                            <input type="text" [(ngModel)]="cliente.email" name="email" placeholder="Exemplo: exemplo@dominio.com" matInput/>
                         </mat-form-field>
                     </div>
                     <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
                         <mat-form-field class="middle-width" appearance="fill">
                             <mat-label> Telefone: *</mat-label>
-                            <input type="number" placeholder="Exemplo: (00) 00000-0000" matInput/>
+                            <input type="text" [(ngModel)]="cliente.telefone" name="telefone" placeholder="Exemplo: (00) 00000-0000" matInput/>
                         </mat-form-field>
 
                         <mat-form-field class="middle-width" appearance="fill">
-                            <mat-label> Endereço: *</mat-label>
-                            <input type="text" placeholder="Exemplo: Rua das Flores, 123" matInput/>
+                            <mat-label> CPF: *</mat-label>
+                            <input type="text" [(ngModel)]="cliente.cpf" name="cpf" placeholder="Exemplo: 000.000.000-00" matInput/>
+                        </mat-form-field>
+
+                        <mat-form-field class="middle-width" appearance="fill">
+                            <mat-label> Data de nascimento: *</mat-label>
+                            <input type="text" [(ngModel)]="cliente.dataNascimento" name="dataNascimento" placeholder="Exemplo: 00/00/0000" matInput/>
                         </mat-form-field>
 
                     </div>
                 </mat-card-content>
-                <mat-card-actions fxLayoutAlign="center">
-                    <button mat-flat-button color="primary">
+                <mat-card-actions fxLayoutGap="8px" fxLayout="column">
+                    <button mat-flat-button color="primary" type="submit">
                         <mat-icon fontIcon="save"></mat-icon>
                         Salvar
+                    </button>
+                    <button mat-flat-button color="primary">
+                        <mat-icon fontIcon="refresh"></mat-icon>
+                        Atualizar
+                    </button>
+                    <button mat-flat-button color="accent" class="ml-5">
+                        <mat-icon fontIcon="backspace"></mat-icon>
+                        Limpar
                     </button>
                 </mat-card-actions>
                 
