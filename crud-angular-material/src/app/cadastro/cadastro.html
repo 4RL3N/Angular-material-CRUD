@@ -16,9 +16,17 @@
                     <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
                         <mat-form-field class="middle-width" appearance="fill">
                             <mat-label> UF </mat-label>
-                            <mat-select>
+                            <mat-select [(value)]="cliente.uf" (selectionChange)="carregarMunicipios($event)">
                                 <mat-option *ngFor="let uf of estados" [value]="uf.sigla">
                                     {{ uf.sigla}} - {{uf.nome}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="middle-width" appearance="fill">
+                            <mat-label> Cidade </mat-label>
+                            <mat-select [(value)]="cliente.municipio">
+                                <mat-option *ngFor="let m of municipios" [value]="m.nome">
+                                    {{ m.nome}}
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>

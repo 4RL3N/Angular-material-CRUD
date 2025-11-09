@@ -9,7 +9,6 @@ import { MatAnchor } from "@angular/material/button";
 import { MatButtonModule } from '@angular/material/button';
 import { ClienteService } from '../cliente';
 import { Cliente } from '../cadastro/cliente';
-//import { ɵEmptyOutletComponent } from "@angular/router";
 import {CommonModule} from '@angular/common'
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -25,7 +24,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatTableModule,
     MatAnchor,
     MatButtonModule,
-    //ɵEmptyOutletComponent, //verificar
     CommonModule
 ],
   templateUrl: './consulta.html',
@@ -34,7 +32,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class Consulta {
   nomeBusca: string = ''
   listaClientes: Cliente[] = [];
-  colunasTable: string[] = ["id", "nome", "cpf", "dataNascimento", "email", "endereco", "acoes"]
+  colunasTable: string[] = ["id", "nome", "cpf", "dataNascimento", "email", "uf", "municipio", "acoes"]
   snack: MatSnackBar = inject(MatSnackBar);
 
   constructor(
