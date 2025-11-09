@@ -15,11 +15,16 @@
 
                     <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
                         <mat-form-field class="middle-width" appearance="fill">
-                            <mat-label> Endereço: *</mat-label>
-                            <input type="text" [(ngModel)]="cliente.endereco" name="endereco" placeholder="Exemplo: Rua das Flores, 123" matInput/>
+                            <mat-label> UF </mat-label>
+                            <mat-select>
+                                <mat-option *ngFor="let uf of estados" [value]="uf.sigla">
+                                    {{ uf.sigla}} - {{uf.nome}}
+                                </mat-option>
+                            </mat-select>
                         </mat-form-field>
-
-                        <mat-form-field class="middle-width" appearance="fill">
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+                        <mat-form-field class="full-width" appearance="fill">
                             <mat-label> Email: *</mat-label>
                             <input type="text" [(ngModel)]="cliente.email" name="email" placeholder="Exemplo: exemplo@dominio.com" matInput/>
                         </mat-form-field>

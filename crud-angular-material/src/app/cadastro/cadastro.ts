@@ -11,6 +11,10 @@ import {ClienteService} from "../cliente"
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Brasilapi } from '../brasilapi';
+import { Municipio, Estado } from '../brasilapi.models';
+import {MatSelectModule} from '@angular/material/select';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cadastro',
@@ -23,6 +27,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatIconModule,
     MatButtonModule,
     NgxMaskDirective,
+    MatSelectModule,
+    CommonModule,
   ],
   providers: [provideNgxMask()],
   templateUrl: './cadastro.html',
@@ -33,13 +39,23 @@ export class Cadastro implements OnInit {
   cliente: Cliente = Cliente.newCliente();
   atualizando: boolean = false;
   snack: MatSnackBar = inject(MatSnackBar);
+  estados: Estado[] = [];
+  municipios : Municipio[] = [];
   
 
   constructor(
+    private brasilApiService : Brasilapi,
     private service: ClienteService,
     private route: ActivatedRoute,
     private router: Router
   ){}
+
+  carregarUfS(){
+    this.brasilApiService.listarUFs().subscribe({
+      next: listaEstados => this.estados = listaEstados,
+      error: erro => console.log("ocorreu um erro: ", erro)
+    })
+  }
 
   salvar(){
     if (!this.atualizando){
@@ -68,6 +84,7 @@ export class Cadastro implements OnInit {
         }
       }
     })
+    this.carregarUfS();
   }
 
   mostrarMensagem(mensagem: string){
