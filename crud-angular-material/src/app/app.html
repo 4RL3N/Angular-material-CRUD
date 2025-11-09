@@ -2,10 +2,16 @@
   <span>Minha barra principal</span>
   <span class="spacer"></span>
   <a routerLink="/cadastro">
+    <button mat-flat-button color="white">
       <mat-icon fontIcon="feed"></mat-icon>
+      Cadastrar
+    </button>
   </a>
   <a routerLink="/consulta">
-    <mat-icon fontIcon="search"></mat-icon>
+    <button mat-flat-button color="white" class="ml-10">
+      <mat-icon fontIcon="search"></mat-icon>
+      Pesquisar
+    </button>
   </a>
 </mat-toolbar>
 <router-outlet></router-outlet>
