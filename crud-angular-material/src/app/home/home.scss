@@ -1,0 +1,86 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* garante altura mínima da tela inteira */
+}
+
+.content {
+  flex: 1; /* faz o conteúdo expandir e empurrar o rodapé para o final */
+  display: flex;
+  flex-direction: column;
+}
+
+/* HERO SECTION */
+.hero {
+  padding: 64px 16px;
+  text-align: center;
+
+  .hero-card {
+    max-width: 600px;
+    padding: 32px;
+
+    mat-card-title {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    button {
+      margin: 0 8px;
+    }
+  }
+}
+
+/* FEATURES SECTION */
+.features {
+  padding: 48px 16px;
+  justify-content: center;
+  text-align: center;
+
+  .feature-card {
+    max-width: 320px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    mat-icon {
+      font-size: 40px;
+      color: #3f51b5;
+    }
+
+    mat-card-title {
+      font-weight: 600;
+      margin-top: 8px;
+    }
+  }
+}
+
+/* FOOTER SECTION */
+.footer {
+  background: #3f51b5;
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  width: 100%;
+  margin-top: auto; /* empurra o footer pro fim do layout */
+  flex-shrink: 0;   /* impede o footer de encolher */
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+}
