@@ -1,0 +1,35 @@
+.footer-toolbar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    font-size: 14px;
+    justify-content: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+
+
+    &:hover {
+        text-decoration: underline;
+}
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ocupa 100% da altura da janela */
+}
+
+.content {
+  flex: 1; /* faz o conteúdo expandir e empurra o rodapé para baixo */
+  padding: 16px;
+}

@@ -1,3 +1,13 @@
 .ml-10{
     margin-left: 10px;
 }
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;     /* permite scroll horizontal */
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;  /* espaço para o scroll bar visual */
+}
+.table-responsive table {
+  min-width: 900px;
+}
